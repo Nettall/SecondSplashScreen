@@ -11,8 +11,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        int numOfStarts = getIntent().getExtras().getInt(SplashActivity.CStarts);
-        if(numOfStarts == 3){
+        int CountStarts = getIntent().getExtras().getInt(SplashActivity.CStarts);
+        if(CountStarts == 3){
             Toast.makeText(this,"Текст", Toast.LENGTH_SHORT).show();
         }
     }

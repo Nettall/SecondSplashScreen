@@ -8,7 +8,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SplashActivity extends AppCompatActivity {
-    public static final String CStarts = "numOfStarts";
+    public static final String CStarts = "CountStarts";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,13 +17,13 @@ public class SplashActivity extends AppCompatActivity {
 
         SharedPreferences sp =  getSharedPreferences("name", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        int numOfStarts = sp.getInt(CStarts,0);
-        numOfStarts++;
-        editor.putInt(CStarts,numOfStarts);
+        int CountStarts = sp.getInt(CStarts,0);
+        CountStarts++;
+        editor.putInt(CStarts,CountStarts);
         editor.apply();
 
         Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra(CStarts,numOfStarts);
+        intent.putExtra(CStarts,CountStarts);
         startActivity(intent);
         finish();
     }
